@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simplecustomer
+  labels:
+    app: simplecustomer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simplecustomer
+  template:
+    metadata:
+      labels:
+        app: simplecustomer
+    spec:
+      containers:
+      - name: simplecustomer
+        image: syed411/simplecustomer:latest
+        ports:
+        - containerPort: 8080
